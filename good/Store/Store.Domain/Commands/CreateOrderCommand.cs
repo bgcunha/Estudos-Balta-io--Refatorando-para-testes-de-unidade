@@ -9,7 +9,7 @@ public class CreateOrderCommand : Notifiable, ICommand
 {
     public CreateOrderCommand()
     {
-        Items = new List<CreateOrderItemCommand>();
+        //Items = new List<CreateOrderItemCommand>();
     }
 
     public CreateOrderCommand(string customer, string zipCode, string promoCode, IList<CreateOrderItemCommand> items)
@@ -23,7 +23,7 @@ public class CreateOrderCommand : Notifiable, ICommand
     public string Customer { get; set; }
     public string ZipCode { get; set; }
     public string PromoCode { get; set; }
-    public IList<CreateOrderItemCommand> Items { get; set; }
+    public IList<CreateOrderItemCommand> Items { get; set; } = new List<CreateOrderItemCommand>();
 
     public void Validate()
     {
