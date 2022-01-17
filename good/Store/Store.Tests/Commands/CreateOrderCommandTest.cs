@@ -9,7 +9,7 @@ public class CreateOrderCommandTest
 {
 
     [TestMethod]
-    [TestCategory("Handlers")]
+    [TestCategory("Commands")]
     public void Dado_um_comando_invalido_o_pedido_nao_deve_ser_gerado()
     {
         var command = new CreateOrderCommand();
