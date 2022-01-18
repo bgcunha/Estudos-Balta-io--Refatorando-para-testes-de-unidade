@@ -30,14 +30,14 @@ public class OrderHandlerTests
     public void Dado_um_cliente_inexistente_o_pedido_nao_deve_ser_gerado()
     {
         var command = new CreateOrderCommand();
-        command.Customer = "";
+        command.Customer = "12345678912";
         command.ZipCode = "13411080";
         command.PromoCode = "12345678";
         command.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
         command.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
 
         var handler = new OrderHandler(
-             null,
+             _customerRepository,
              _deliveryFeeRepository,
              _discountRepository,
              _productRepository,
